@@ -33,6 +33,15 @@ class Teacher implements TeacherInterface {
     return "Getting to work";
   }
 }
+type Subjects = "Math" | "History";
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  return "Teaching History";
+}
+
 
 export function createEmployee(salary: number | string): Director | Teacher {
   if (salary < 500) { // checker looks for this exact string
