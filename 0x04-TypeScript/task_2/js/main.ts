@@ -63,4 +63,7 @@ console.log(createEmployee("$500")); // Director
 
 
 
-export function isDirector(...)
+export function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
