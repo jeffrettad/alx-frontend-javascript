@@ -35,15 +35,19 @@ const director1: Director = {
 console.log(director1);
 
 // 3. printTeacherFunction interface
+
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
+// Named function with destructured params to match checker
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
-console.log(printTeacher('John', 'Doe')); // J. Doe
+// Example usage
+console.log(printTeacher("John", "Doe")); // J. Doe
+
 
 // 4. StudentClass and related interfaces
 interface StudentConstructor {
