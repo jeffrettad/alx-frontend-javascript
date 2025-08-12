@@ -5,26 +5,26 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [propName: string]: any; // index signature for additional attributes
+  [propName: string]: any; // allows extra properties
 }
 
-// Example usage
+// Example Teacher
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
   lastName: 'Doe',
   location: 'London',
-  contract: false, // additional property allowed
+  contract: false, // extra property
 };
 
 console.log(teacher3);
 
-// 2. Directors interface extending Teacher
-interface Directors extends Teacher {
+// 2. Director interface extending Teacher
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
-const director1: Directors = {
+const director1: Director = {
   firstName: 'Jane',
   lastName: 'Smith',
   location: 'New York',
@@ -45,7 +45,7 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 
 console.log(printTeacher('John', 'Doe')); // J. Doe
 
-// 4. StudentClass and interfaces
+// 4. StudentClass and related interfaces
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
