@@ -41,9 +41,8 @@ interface printTeacherFunction {
 }
 
 // Named function with destructured params to match checker
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
-}
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }) { ... }
+
 
 // Example usage
 console.log(printTeacher("John", "Doe")); // J. Doe
