@@ -51,4 +51,4 @@ export function executeWork(employee: Director | Teacher): string {
 export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
-["export function isDirector"]
+export function isDirector
