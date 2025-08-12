@@ -33,23 +33,17 @@ class Teacher implements TeacherInterface {
     return "Getting to work";
   }
 }
-type Subjects = "Math" | "History";
-
-export function teachClass(todayClass: Subjects): string {
-  if (todayClass === "Math") {
-    return "Teaching Math";
-  }
-  return "Teaching History";
-}
-
 
 export function createEmployee(salary: number | string): Director | Teacher {
-  if (salary < 500) { // checker looks for this exact string
+  if (salary < 500) {
     return new Teacher();
   }
   return new Director();
 }
 
+export function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
 
 export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
@@ -57,7 +51,12 @@ export function executeWork(employee: Director | Teacher): string {
   }
   return employee.workTeacherTasks();
 }
-export function isDirector(employee: Director | Teacher): employee is Director {
-  return employee instanceof Director;
+
+type Subjects = "Math" | "History";
+
+export function teachClass(todayClass:Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  return "Teaching History";
 }
-export function isDirector
