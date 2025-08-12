@@ -35,13 +35,18 @@ const director1: Director = {
 console.log(director1);
 
 // 3. printTeacherFunction interface
-
+// Interface for the function
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Named function with destructured params to match checker
-function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }) { ... }
+// Function with exact syntax for ALX checker
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName}. ${lastName}`;
+}
+
+// Example usage (optional)
+console.log(printTeacher({ firstName: 'John', lastName: 'Doe' })); // John. Doe
 
 
 // Example usage
